@@ -61,4 +61,18 @@ class Stack
         end
     end
 
+    # Enumerator (common ruby idiom).
+    # Loops over the stack (from head to tail) yielding one item at a time.
+    # Complexity: yield next element is O(1), 
+    #             yield all elements is O(n).
+    def each
+        return nil unless block_given?
+
+        current = self.head
+        while current
+            yield current
+            current = current.next
+        end
+    end
+
 end

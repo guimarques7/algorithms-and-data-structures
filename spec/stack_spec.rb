@@ -64,7 +64,7 @@ RSpec.describe Stack do
     expect(stack).to respond_to(:peek)
   end
 
-  it 'peeks correct value after pushing a value' do
+  it 'responds positively peeking after pushing a value' do
     value = 2
     stack = Stack.new
     stack.push value
@@ -77,7 +77,7 @@ RSpec.describe Stack do
     expect(stack).to respond_to(:clear)
   end
 
-  it 'clears correctly an stack after pushing 3 items' do
+  it 'responds positively clearing an stack after pushing 3 items' do
     stack = Stack.new
     stack.push 1
     stack.push 2
@@ -88,6 +88,29 @@ RSpec.describe Stack do
     expect(stack.head).to eq nil
     expect(stack.tail).to eq nil
     expect(stack.peek).to eq nil
+  end
+
+  it 'each' do
+    stack = Stack.new
+    expect(stack).to respond_to(:each)
+  end
+
+  it 'responds positively iterating (each) on pushed values' do
+    stack = Stack.new
+
+    list = [1, 2, 3]
+
+    list.each do |value|
+      stack.push value
+    end
+
+    list.reverse!
+
+    index = 0
+    stack.each do |item|
+      expect(item.data).to eq list[index]
+      index = index + 1
+    end
   end
 
 end 
