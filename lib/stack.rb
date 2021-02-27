@@ -47,4 +47,10 @@ class Stack
         self.length -= 1
     end
 
+    # Returns the element that's at the top of the stack without removing it.
+    # Complexity O(1).
+    def peek
+        self.head
+    end
+
 end

@@ -59,4 +59,17 @@ RSpec.describe Stack do
     expect(stack.size).to eq 2
   end
 
+  it 'peeks' do
+    stack = Stack.new
+    expect(stack).to respond_to(:peek)
+  end
+
+  it 'peeks correct value after pushing a value' do
+    value = 2
+    stack = Stack.new
+    stack.push value
+    expect(stack.peek).to be_kind_of(Stack::Node)
+    expect(stack.peek.data).to eq value
+  end
+
 end 
