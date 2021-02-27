@@ -37,4 +37,14 @@ class Stack
         self.length += 1
     end
 
+    # Removes the element that's at the top of the stack.
+    # Complexity O(1).
+    def pop
+        return nil unless self.length > 0
+        
+        self.head = self.head.next
+        self.tail = nil if self.length == 1
+        self.length -= 1
+    end
+
 end

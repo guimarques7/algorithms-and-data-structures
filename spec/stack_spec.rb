@@ -25,24 +25,38 @@ RSpec.describe Stack do
     expect(stack).to respond_to(:push)
   end
 
-  it 'responds positively to adding an item' do
+  it 'responds positively to pushing an item' do
     stack = Stack.new
     stack.push 1
     expect(stack.head).to be_kind_of(Stack::Node)
   end
 
-  it 'responds positively to the correct size value after adding an item' do
+  it 'responds positively to the correct size value after pushing an item' do
     stack = Stack.new
     stack.push 1
     expect(stack.size).to eq 1
   end
 
-  it 'responds positively to the correct size value after adding 3 items' do
+  it 'responds positively to the correct size value after pushing 3 items' do
     stack = Stack.new
     stack.push 1
     stack.push 2
     stack.push 3
     expect(stack.size).to eq 3
+  end
+
+  it 'pops' do
+    stack = Stack.new
+    expect(stack).to respond_to(:pop)
+  end
+
+  it 'responds positively to the correct size value after pushing 3 items and poping 1 item' do
+    stack = Stack.new
+    stack.push 1
+    stack.push 2
+    stack.push 3
+    stack.pop
+    expect(stack.size).to eq 2
   end
 
 end 
