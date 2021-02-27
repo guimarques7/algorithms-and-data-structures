@@ -37,4 +37,12 @@ RSpec.describe Stack do
     expect(stack.size).to eq 1
   end
 
+  it 'responds positively to the correct size value after adding 3 items' do
+    stack = Stack.new
+    stack.push 1
+    stack.push 2
+    stack.push 3
+    expect(stack.size).to eq 3
+  end
+
 end 
