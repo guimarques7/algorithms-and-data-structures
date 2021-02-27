@@ -53,4 +53,12 @@ class Stack
         self.head
     end
 
+    # Pops all elements from the stack.
+    # Complexity O(n).
+    def clear
+        while peek
+            pop
+        end
+    end
+
 end

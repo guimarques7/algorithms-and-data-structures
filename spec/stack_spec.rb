@@ -72,4 +72,22 @@ RSpec.describe Stack do
     expect(stack.peek.data).to eq value
   end
 
+  it 'clears' do 
+    stack = Stack.new
+    expect(stack).to respond_to(:clear)
+  end
+
+  it 'clears correctly an stack after pushing 3 items' do
+    stack = Stack.new
+    stack.push 1
+    stack.push 2
+    stack.push 3
+    stack.clear
+    expect(stack.size).to eq 0
+    expect(stack.length).to eq 0
+    expect(stack.head).to eq nil
+    expect(stack.tail).to eq nil
+    expect(stack.peek).to eq nil
+  end
+
 end 

@@ -23,5 +23,5 @@ guard :shell do
 end
 
 guard :shell do
-  watch(%r{^*\.rb}) { `clear && bundle exec rspec spec/` }
+  watch(%r{^*\.rb}) { `clear && bundle exec rspec -f d spec/` }
 end
