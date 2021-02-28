@@ -75,4 +75,14 @@ class Stack
         end
     end
 
+    # Prints the contents of the stack.
+    # Complexity: O(n).
+    def print
+        if self.length == 0
+            puts "empty"
+        else
+            self.each { |node| puts node.data }
+        end
+    end
+
 end

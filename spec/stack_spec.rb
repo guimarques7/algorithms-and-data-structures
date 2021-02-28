@@ -113,4 +113,26 @@ RSpec.describe Stack do
     end
   end
 
+  it 'prints' do
+    stack = Stack.new
+    expect(stack).to respond_to(:print)
+  end
+
+  it 'responds positively printing \'empty\' on a empty stack' do
+    stack = Stack.new
+    expect { stack.print }.to output("empty\n").to_stdout
+  end
+
+  it 'responds positively printing pushed values' do
+    list = [1, 2, 3]
+
+    stack = Stack.new
+    list.each do |value|
+      stack.push value
+    end
+    
+    list.reverse!
+    expect { stack.print }.to output(list.flatten!).to_stdout
+  end
+
 end 
