@@ -1,12 +1,6 @@
-class Stack
+require 'node'
 
-    class Node
-        attr_accessor :next, :data
-        def initialize data
-            self.data = data
-            self.next = nil
-        end
-    end
+class Stack
 
     attr_accessor :head, :tail, :length
 

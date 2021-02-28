@@ -1,4 +1,5 @@
 require 'stack.rb'
+require 'node.rb'
 
 # Stack class tests
 RSpec.describe Stack do
@@ -28,7 +29,7 @@ RSpec.describe Stack do
   it 'responds positively to pushing an item' do
     stack = Stack.new
     stack.push 1
-    expect(stack.head).to be_kind_of(Stack::Node)
+    expect(stack.head).to be_kind_of(Node)
   end
 
   it 'responds positively to the correct size value after pushing an item' do
@@ -68,7 +69,7 @@ RSpec.describe Stack do
     value = 2
     stack = Stack.new
     stack.push value
-    expect(stack.peek).to be_kind_of(Stack::Node)
+    expect(stack.peek).to be_kind_of(Node)
     expect(stack.peek.data).to eq value
   end
 
