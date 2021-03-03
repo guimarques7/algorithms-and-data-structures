@@ -9,4 +9,14 @@ RSpec.describe 'Queue' do
       expect(queue.tail).to eq nil
       expect(queue.length).to eq 0
     end
+
+    it 'sizes' do
+      queue = Queue.new
+      expect(queue).to respond_to(:size)
+    end
+  
+    it 'responds positively to the initial size value' do
+      queue = Queue.new
+      expect(queue.size).to eq 0
+    end
 end

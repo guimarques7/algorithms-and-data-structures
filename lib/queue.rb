@@ -8,4 +8,10 @@ class Queue
         self.tail   = nil
         self.length = 0
     end
+
+    # Returns the size of stack.
+    # Complexity: O(1).
+    def size
+        self.length
+    end
 end
