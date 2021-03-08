@@ -1,4 +1,5 @@
 require 'queue.rb'
+require 'node.rb'
 
 # Queue class tests
 RSpec.describe 'Queue' do
@@ -18,5 +19,27 @@ RSpec.describe 'Queue' do
     it 'responds positively to the initial size value' do
       queue = Queue.new
       expect(queue.size).to eq 0
+    end
+
+    it 'enqueues' do
+      queue = Queue.new
+      expect(queue).to respond_to(:enqueue)
+    end
+
+    it 'responds positively after enqueueing an item' do
+      queue = Queue.new
+      queue.enqueue 1
+
+      expect(queue.size).to eq 1
+    end
+
+    it 'responds positively after enqueueing 3 items' do
+      queue = Queue.new
+
+      queue.enqueue 1
+      queue.enqueue 2
+      queue.enqueue 3
+
+      expect(queue.size).to eq 3
     end
 end
